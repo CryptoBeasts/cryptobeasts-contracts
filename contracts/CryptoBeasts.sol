@@ -51,7 +51,7 @@ contract CryptoBeasts is Context, Ownable, ERC165, IERC721Metadata, IERC721Enume
         _symbol = symbol_;
     }
 
-
+    // only owner can mint. all tokens minted in one transaction will be given the same URI
     function mint(uint256 count, string memory TokenURI_) external onlyOwner {
         require(totalSupply() + count < MAX_BEASTS, "ERC721: Exceeds the maximum beasts");
     
@@ -61,7 +61,7 @@ contract CryptoBeasts is Context, Ownable, ERC165, IERC721Metadata, IERC721Enume
             _setTokenURI(mintIndex, TokenURI_);
         }
     }
-
+    // only owner can change URI.
     function changeTokenURI(uint256 tokenId, string memory TokenURI_) external onlyOwner {
         _setTokenURI(tokenId, TokenURI_);
     }

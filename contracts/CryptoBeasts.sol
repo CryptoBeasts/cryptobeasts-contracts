@@ -1,7 +1,9 @@
 // SPDX-License-Identifier: MIT
 
 /******************************************************************************\
-* 0xShroom (https://github.com/0xshroom)
+* 
+* Modified by: 0xShroom (https://github.com/0xshroom)
+* 
 /******************************************************************************/
 
 pragma solidity ^0.8.3;
@@ -37,7 +39,7 @@ contract CryptoBeasts is Context, Ownable, ERC165, IERC721Metadata, IERC721Enume
 
     uint256[] private _allTokens;
     mapping(uint256 => uint256) private _allTokensIndex;
-    
+
     mapping (uint256 => string) private _tokenURIs;
 
 
